@@ -11,7 +11,8 @@
 /system_root   ext4   /dev/block/bootdevice/by-name/system                    	flags=display="System";backup=0
 /vendor        ext4   /dev/block/bootdevice/by-name/vendor                    	flags=display="Vendor";backup=0;wipeingui
 
-/data          ext4   	/dev/block/bootdevice/by-name/userdata                  flags=encryptable=footer;length=-16384;fileencryption=ice:aes-256-cts:aes-256-heh
+/data          ext4   	/dev/block/bootdevice/by-name/userdata                  flags=encryptable=footer;length=-16384;fileencryption=ice
+#/data          ext4   	/dev/block/bootdevice/by-name/userdata                  flags=encryptable=footer;length=-16384;fileencryption=ice:aes-256-cts:aes-256-heh
 
 /vendor_image  emmc    	/dev/block/bootdevice/by-name/vendor			flags=display="Vendor_image";backup=1;flashimg=1
 /system_image  emmc    	/dev/block/bootdevice/by-name/system			flags=display="System_image";backup=1;flashimg=1
@@ -33,11 +34,15 @@
 /efsc          emmc   	/dev/block/bootdevice/by-name/fsc                       flags=backup=1;subpartitionof=/efs1
 /efsg          emmc   	/dev/block/bootdevice/by-name/fsg                       flags=backup=1;subpartitionof=/efs1
 /persist       ext4     /dev/block/bootdevice/by-name/persist                   flags=display="Persist";backup=1
-/persist_image emmc    /dev/block/bootdevice/by-name/persist                 	flags=display="Persist_image";backup=1;flashimg=1
+/persist_image emmc    /dev/block/bootdevice/by-name/persist                 	flags=display="Persist(Image)";backup=1;flashimg=1
 /splash        emmc    /dev/block/bootdevice/by-name/splash               	flags=display="Boot Logo";backup=1;flashimg=1
 /vbmeta_image  emmc    /dev/block/bootdevice/by-name/vbmeta                   	flags=display="Vbmeta";flashimg=1
 
 # Removable storage
 /usb_otg       	vfat /dev/block/sda1                    /dev/block/sda          flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
 /sdcard1   	vfat /dev/block/mmcblk1p1               /dev/block/mmcblk1      flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
+#
+/keymaster        emmc     /dev/block/bootdevice/by-name/keymaster    flags=display="keymaster";backup=1;flashimg=1
+/keystore         emmc     /dev/block/bootdevice/by-name/keystore
+/tz               emmc     /dev/block/bootdevice/by-name/tz           flags=display="Tz";backup=1;flashimg=1
 #

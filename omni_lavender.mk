@@ -34,5 +34,5 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=1 \
     ro.adb.secure=0 \
     ro.allow.mock.location=0 \
-    ro.hardware.keystore=sdm660
+    ro.vendor.build.security_patch=2099-12-31
 #

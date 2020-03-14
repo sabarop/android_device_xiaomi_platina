@@ -16,10 +16,11 @@
 #
 FDEVICE="lavender"
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-        export PLATFORM_VERSION="10.0.0"
+        #export PLATFORM_VERSION="10.0.0"
+        export PLATFORM_VERSION="16.1.0"
    	export PLATFORM_SECURITY_PATCH="2099-12-31"
    	export TW_DEFAULT_LANGUAGE="en"
-	export OF_USE_LEGACY_CRYPTO=1
+	# export OF_USE_LEGACY_CRYPTO=1
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
         export OF_SCREEN_H=2340
         export OF_STATUS_H=80

@@ -1,5 +1,7 @@
 # Copyright (c) 2009-2012, 2014-2015, The Linux Foundation. All rights reserved.
 #
+# Copyright (C) 2019-2020 OrangeFox Recovery Project
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #     * Redistributions of source code must retain the above copyright
@@ -33,20 +35,8 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
-    install_keyring
+#    install_keyring
 
-on property:twrp.mount_to_decrypt=1
-    start odm_qseecomd
-
-on property:twrp.mount_to_decrypt=0
-    stop odm_qseecomd
-
-service odm_qseecomd /odm/bin/qseecomd
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-	
 on init
     mkdir /system/bin
     mkdir /system/etc
@@ -54,8 +44,12 @@ on init
     symlink /sbin/busybox /system/bin/sh
     symlink /vendor/manifest.xml /system/manifest.xml
 
+    # Workaround for setting AVB version
+    setprop ro.boot.avb_version 1.0
+    setprop ro.boot.vbmeta.avb_version ${ro.boot.avb_version}
+
     start hwservicemanager
-    setprop crypto.ready 1
+    start servicemanager
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
@@ -66,7 +60,7 @@ service sbinqseecomd /sbin/qseecomd
 
 service hwservicemanager /sbin/hwservicemanager
     user root
-    group root
+    group root readproc
     disabled
     onrestart setprop hwservicemanager.ready false
     seclabel u:r:recovery:s0
@@ -99,23 +93,49 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
 
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root
-    group root
+    group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
 on boot
     setprop sys.usb.config adb
 
-on property:crypto.ready=0
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-
-on property:crypto.ready=1
+on property:hwservicemanager.ready=true
     start sbinqseecomd
+
+on property:sys.listeners.registered=true
+    start keymaster-4-0
+    start gatekeeper-1-0
 
 on property:vendor.sys.listeners.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
-    start servicemanager
+
+on property:ro.crypto.state=unsupported
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.state=unencrypted
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:twrp.decrypt.done=true
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.fs_crypto_blkdev=*
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+#
