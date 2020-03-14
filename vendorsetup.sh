@@ -16,11 +16,9 @@
 #
 FDEVICE="lavender"
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-        #export PLATFORM_VERSION="10.0.0"
         export PLATFORM_VERSION="16.1.0"
    	export PLATFORM_SECURITY_PATCH="2099-12-31"
    	export TW_DEFAULT_LANGUAGE="en"
-	# export OF_USE_LEGACY_CRYPTO=1
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
         export OF_SCREEN_H=2340
         export OF_STATUS_H=80
@@ -40,10 +38,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_ZIP_BINARY=1
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_USE_NEW_MAGISKBOOT=1
-
-	# export FOX_USE_LZMA_COMPRESSION=1
-	# export LZMA_RAMDISK_TARGETS="[recovery]"
-	# export FOX_REPLACE_TOOLBOX_GETPROP=1
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
