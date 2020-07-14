@@ -1,4 +1,6 @@
-TWRP device tree for Xiaomi Redmi Note 7 (codenamed _"lavender"_)
+# Device tree for Xiaomi Redmi Note 7 (codenamed _"lavender"_)
+
+Kernel source: "https://github.com/stormbreaker-project/android_kernel_xiaomi_lavender.git"
 ==================================
 ## Device specifications
 
@@ -18,15 +20,16 @@ TWRP device tree for Xiaomi Redmi Note 7 (codenamed _"lavender"_)
 | Rear camera 2           | 2 MP, f/2.4, depth sensor or 5 MP, f/2.2, depth sensor      |
 | Front camera            | 13 MP, f/2.0, 1.12µm                                        |
 
-![Xiaomi Redmi Note 7](https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note7/gallery1-2.jpg)
+## Device Picture
 
+![Xiaomi Redmi Note 7](https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note7/gallery1-2.jpg "Redmi Note 7")
 
 ### Copyright
  ```
   /*
-  *  Copyright (C) 2013-20 The TWRP
+  *  Copyright (C) 2013-2020 The TWRP
   *
-  *  Copyright (C) 2018-2020 The OrangeFox Recovery Project
+  *  Copyright (C) 2019-2020 The OrangeFox Recovery Project
   *
   * This program is free software: you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
