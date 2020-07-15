@@ -48,6 +48,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         # use system (ROM) fingerprint where available
         export OF_USE_SYSTEM_FINGERPRINT=1
 
+	# OTA for custom ROMs
+        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+        export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+
         # -- add settings for R11 --
         export FOX_R11=1
         export FOX_ADVANCED_SECURITY=1
