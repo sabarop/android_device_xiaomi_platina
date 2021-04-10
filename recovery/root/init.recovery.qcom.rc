@@ -37,6 +37,18 @@ on fs
     chown system system /dev/ion
     install_keyring
 
+on property:twrp.mount_to_decrypt=1
+    start odm_qseecomd
+
+on property:twrp.mount_to_decrypt=0
+    stop odm_qseecomd
+
+service odm_qseecomd /odm/bin/qseecomd
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
 on init
     mkdir /system/bin
     mkdir /system/etc
