@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2019-2020 The OrangeFox Recovery Project
+# 	Copyright (C) 2019-2021 The OrangeFox Recovery Project
 #	
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -70,11 +70,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
         # -- add settings for R11 --
         export FOX_R11=1
-        export FOX_ADVANCED_SECURITY=1
-        export OF_USE_TWRP_SAR_DETECT=1
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
+        export OF_USE_TWRP_SAR_DETECT=1
+#        export FOX_ADVANCED_SECURITY=1
         # -- end R11 settings --
+
+	# run a process after formatting data to work-around MTP issues
+	export OF_RUN_POST_FORMAT_PROCESS=1
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
