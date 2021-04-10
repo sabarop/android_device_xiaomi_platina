@@ -1,7 +1,7 @@
 #
 # Copyright 2017 The Android Open Source Project
 #
-# Copyright (C) 2019-2020 OrangeFox Recovery Project
+# Copyright (C) 2019-2021 OrangeFox Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -32,13 +32,13 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := kryo
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := armv8-a
+TARGET_2ND_CPU_VARIANT := cortex-a73
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -134,8 +134,4 @@ TW_INCLUDE_FUSE_NTFS := true
 
 # System-as-root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-
-# Android Verified Boot
-##BOARD_AVB_ENABLE := false
-##BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 #
