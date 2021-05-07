@@ -50,6 +50,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 	#export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1; # if you disable this, then enable the next line
 	export OF_NO_MIUI_PATCH_WARNING=1
+	export OF_USE_GREEN_LED=0
+
+	# use magisk 21.4 for the magisk addon
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-21.4.zip
 
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
@@ -60,6 +64,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_USE_NEW_MAGISKBOOT=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
+   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
 
         # use system (ROM) fingerprint where available
         export OF_USE_SYSTEM_FINGERPRINT=1
@@ -72,7 +77,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export FOX_R11=1
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
-        export OF_USE_TWRP_SAR_DETECT=1
 #        export FOX_ADVANCED_SECURITY=1
         # -- end R11 settings --
 
@@ -87,7 +91,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   	   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
  	fi
 
-	add_lunch_combo omni_"$FDEVICE"-eng
-	add_lunch_combo omni_"$FDEVICE"-userdebug
+  	for var in eng user userdebug; do
+  		add_lunch_combo omni_"$FDEVICE"-$var
+  	done
 fi
 #
