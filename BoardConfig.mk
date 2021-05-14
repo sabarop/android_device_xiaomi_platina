@@ -126,12 +126,6 @@ TARGET_USES_LOGD := true
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 
-# exFAT FS Support
-TW_INCLUDE_FUSE_EXFAT := true
-
-# NTFS Support
-TW_INCLUDE_FUSE_NTFS := true
-
 # System-as-root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
