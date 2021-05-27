@@ -107,7 +107,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 AB_OTA_UPDATER := false
 
 # TWRP specific build flags
-TARGET_OTA_ASSERT_DEVICE := lavender
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
