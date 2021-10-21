@@ -411,10 +411,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.sdm660
 
-# Tethering
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay
-
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
