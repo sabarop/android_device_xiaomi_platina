@@ -428,6 +428,10 @@ on property:persist.vendor.radio.atfwd.start=false
 on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
+# Restrict permissions to socket file 
+    # to hide Magisk & co.
+    chmod 440 /proc/net/unix
+    
 # corefile limit
 #on property:persist.debug.trace=1
 #    mkdir /data/core 0777 root root
