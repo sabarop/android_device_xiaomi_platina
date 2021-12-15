@@ -1,6 +1,6 @@
 # Copyright (c) 2009-2012, 2014-2015, The Linux Foundation. All rights reserved.
 #
-# Copyright (C) 2019-2020 OrangeFox Recovery Project
+# Copyright (C) 2019-2021 OrangeFox Recovery Project
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -33,8 +33,4 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     export ANDROID_ROOT /system_root
-
-on boot
-    setprop sys.usb.config none
-    setprop sys.usb.config adb
 #
