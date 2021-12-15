@@ -7,7 +7,8 @@ ro.treble.enabled=true
 sys.usb.controller=a800000.dwc3
 sys.usb.rndis.func.name=rndis_bam
 sys.usb.rmnet.func.name=rmnet_bam
-#
 ro.product.board=sdm660
 ro.board.platform=sdm660
+ro.boot.avb_version=1.0
+ro.boot.vbmeta.avb_version=1.0
 #
