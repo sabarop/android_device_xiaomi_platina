@@ -50,10 +50,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	#export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1; # if you disable this, then enable the next line
 	export OF_NO_MIUI_PATCH_WARNING=1
 	export OF_USE_GREEN_LED=0
-
-	# use magisk 23.0 for the magisk addon
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
-
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_NANO_EDITOR=1
@@ -64,14 +60,23 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_USE_NEW_MAGISKBOOT=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
-   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
-
-        # use system (ROM) fingerprint where available
-        export OF_USE_SYSTEM_FINGERPRINT=1
+   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1588606644" # Mon  4 May 16:37:24 BST 2020
 
 	# OTA for custom ROMs
         export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
         export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+
+	# use magisk 23.0 for the magisk addon
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
+
+	# mark this as the Android12 variant
+	export FOX_VARIANT="A12"
+
+        # use system (ROM) fingerprint where available
+        export OF_USE_SYSTEM_FINGERPRINT=1
+
+        # allow the nav bar to be disabled
+        export OF_ALLOW_DISABLE_NAVBAR=1
 
         # -- add settings for R11 --
         export FOX_R11=1
