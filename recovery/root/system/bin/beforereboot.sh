@@ -19,12 +19,13 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-# clear the first 32 bytes of the misc partition to prevent unnecessary bootloops to recovery
+# clear the first x bytes of the misc partition to prevent unnecessary bootloops to recovery
 # this is only required when building with 10.0+ manifests
 clear_init_fatal_reboot_target() {
+   local bytes=512;
    usleep 4096;
    echo "Executing $0" >> /tmp/recovery.log
-   dd if=/dev/zero of=/dev/block/bootdevice/by-name/misc bs=32 count=1;
+   dd if=/dev/zero of=/dev/block/bootdevice/by-name/misc bs=$bytes count=1;
    usleep 4096;
 }
 
