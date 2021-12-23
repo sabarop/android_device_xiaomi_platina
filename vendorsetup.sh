@@ -75,6 +75,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         # allow the nav bar to be disabled
         export OF_ALLOW_DISABLE_NAVBAR=1
 
+        # mount r/w
+        export OF_MOUNT_NON_DYNAMIC_RW=1
+
         # -- add settings for R11 --
         export FOX_R11=1
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
