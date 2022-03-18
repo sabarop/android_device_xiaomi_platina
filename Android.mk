@@ -18,7 +18,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/twrp_lavender.mk
+LOCAL_PATH := $(call my-dir)
 
-COMMON_LUNCH_CHOICES := twrp_lavender-eng
+ifeq ($(TARGET_DEVICE), lavender)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+endif

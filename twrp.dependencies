@@ -3,20 +3,12 @@
     "remote": "TeamWin",
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "branch": "android-10"
+    "branch": "android-11"
   },
-
   {
     "remote": "TeamWin",
     "repository": "android_device_qcom_twrp-common",
     "target_path": "device/qcom/twrp-common",
-    "branch": "android-10"
-  },
-
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_qcom_opensource_commonsys",
-    "target_path": "vendor/qcom/opensource/commonsys",
-    "branch": "android-10"
+    "branch": "android-11"
   }
 ]

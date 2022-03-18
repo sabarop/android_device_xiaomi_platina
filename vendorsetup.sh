@@ -18,6 +18,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 FDEVICE="lavender"
+#set -o xtrace
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
@@ -34,7 +35,6 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-        export PLATFORM_VERSION="16.1.0"
    	export TW_DEFAULT_LANGUAGE="en"
 	export OF_KEEP_FORCED_ENCRYPTION=1
 	export OF_PATCH_AVB20=1
@@ -42,11 +42,20 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_STATUS_H=80
         export OF_STATUS_INDENT_LEFT=48
         export OF_STATUS_INDENT_RIGHT=48
+  	export OF_HIDE_NOTCH=1
+  	export OF_CLOCK_POS=1
+	export OF_USE_MAGISKBOOT=1
+	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+	#export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1; # if you disable this, then enable the next line
 	export OF_NO_MIUI_PATCH_WARNING=1
 	export OF_USE_GREEN_LED=0
+
+	# use magisk 23.0 for the magisk addon
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
+
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_NANO_EDITOR=1
@@ -55,22 +64,16 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
 	export FOX_REPLACE_BUSYBOX_PS=1
+	export OF_USE_NEW_MAGISKBOOT=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
-   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1588606644" # Mon  4 May 16:37:24 BST 2020
+   	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
+
+        # use system (ROM) fingerprint where available
+        export OF_USE_SYSTEM_FINGERPRINT=1
 
 	# OTA for custom ROMs
         export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
         export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-
-	# use magisk 23.0 for the magisk addon
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
-	export OF_USE_NEW_MAGISKBOOT=1
-
-        # allow the nav bar to be disabled
-        export OF_ALLOW_DISABLE_NAVBAR=1
-
-        # mount r/w
-        export OF_MOUNT_NON_DYNAMIC_RW=1
 
         # -- add settings for R11 --
         export FOX_R11=1
@@ -78,11 +81,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
         # -- end R11 settings --
 
-	# recreate data/media after formatting+dfe enabled
-	export OF_RUN_POST_FORMAT_PROCESS=1
-
-	# always recreate /data/media after formatting data (breaks A11+ encryption of internal storage)
-	export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=1
+	# run a process after formatting data to work-around MTP issues
+	if [ "$FOX_VARIANT" = "strict" ]; then
+	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=0
+	   export OF_RUN_POST_FORMAT_PROCESS=1
+	else
+	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=1
+	fi
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

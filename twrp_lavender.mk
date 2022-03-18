@@ -3,8 +3,6 @@
 # Copyright (C) 2020 The TWRP Open Source Project
 # Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
 #
-# Copyright (C) 2019-2022 The OrangeFox Recovery Project
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -18,7 +16,22 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/twrp_lavender.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-COMMON_LUNCH_CHOICES := twrp_lavender-eng
+# Inherit from lavender device
+$(call inherit-product, device/xiaomi/lavender/device.mk)
+
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := lavender
+PRODUCT_NAME := twrp_lavender
+PRODUCT_BRAND := xiaomi
+PRODUCT_MODEL := Redmi Note 7
+PRODUCT_MANUFACTURER := xiaomi
+#
