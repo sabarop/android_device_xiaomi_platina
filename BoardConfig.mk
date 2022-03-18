@@ -106,13 +106,6 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 
-# FDE
-ifeq ($(FOX_VARIANT),FDE)
-  $(error FDE doesn't work with the 11.0 manifest)
-  TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
-  TARGET_HW_DISK_ENCRYPTION := true
-endif
-
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2127-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)

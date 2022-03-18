@@ -1,17 +1,21 @@
 #
-# Copyright (C) 2019-2022 The OrangeFox Recovery Project
+#	This file is part of the OrangeFox Recovery Project
+# 	Copyright (C) 2019-2022 The OrangeFox Recovery Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+#	OrangeFox is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	any later version.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#	OrangeFox is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# 	This software is released under GPL version 3 or any later version.
+#	See <http://www.gnu.org/licenses/>.
+#
+# 	Please maintain this if you use this script or any part of it
 #
 
 # Inherit from the common Open Source product configuration
@@ -34,8 +38,31 @@ TW_EXCLUDE_APEX := true
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
+# FDE
+ifeq ($(FOX_VARIANT),FDE)
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_LEGACY_HW_DISK_ENCRYPTION := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+	libhardware_legacy \
+	android.system.suspend@1.0
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware_legacy.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.suspend@1.0.so
+
+PRODUCT_COPY_FILES += \
+	$(OUT_DIR)/target/product/lavender/obj/SHARED_LIBRARIES/libcryptfs_hw_intermediates/libcryptfs_hw.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libcryptfs_hw.so
+endif
+
 # Libraries
-TARGET_RECOVERY_DEVICE_MODULES += libion libandroidicu vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti
+TARGET_RECOVERY_DEVICE_MODULES += \
+	libion \
+	libandroidicu \
+	vendor.display.config@1.0 \
+	vendor.display.config@2.0 \
+	libdisplayconfig.qti
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
