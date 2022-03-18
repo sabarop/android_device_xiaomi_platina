@@ -39,9 +39,10 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
 # FDE
-ifeq ($(FOX_VARIANT),FDE)
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
+ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
+
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TARGET_LEGACY_HW_DISK_ENCRYPTION := true
 
 TARGET_RECOVERY_DEVICE_MODULES += \
