@@ -82,11 +82,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         # -- end R11 settings --
 
 	# run a process after formatting data to work-around MTP issues
-	if [ "$FOX_VARIANT" = "strict" ]; then
+	if [ "$FOX_VARIANT" = "permissive" ]; then
+	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=1
+	else
 	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=0
 	   export OF_RUN_POST_FORMAT_PROCESS=1
-	else
-	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=1
 	fi
 
 	# let's see what are our build VARs
