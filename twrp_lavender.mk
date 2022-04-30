@@ -18,17 +18,13 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
+PRODUCT_RELEASE_NAME := lavender
+DEVICE_PATH := device/xiaomi/lavender
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# Inherit from lavender device
-$(call inherit-product, device/xiaomi/lavender/device.mk)
-
-# Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, device/xiaomi/lavender/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lavender
