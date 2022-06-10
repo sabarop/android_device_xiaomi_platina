@@ -18,6 +18,9 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
 LOCAL_PATH := device/xiaomi/lavender
 
 # fscrypt policy version
