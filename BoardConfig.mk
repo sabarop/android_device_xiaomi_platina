@@ -68,6 +68,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 
 KERNEL_DIRECTORY := $(DEVICE_PATH)/prebuilt
+
 ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
   TARGET_KERNEL_CONFIG := lavender-fox_defconfig
@@ -147,9 +148,7 @@ TW_NO_LEGACY_PROPS := true
 TW_MAX_BRIGHTNESS := 4095
 TW_DEFAULT_BRIGHTNESS := 1950
 #
-# 12.1 manifest requirements
-TARGET_SUPPORTS_64_BIT_APPS := true
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true # may not really be needed
+
+# python, for ABX xml conversion (change to true to enable)
+TW_INCLUDE_PYTHON := true
 #
