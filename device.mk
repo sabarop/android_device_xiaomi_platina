@@ -41,7 +41,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # FDE [Not supported]
 TARGET_HW_DISK_ENCRYPTION := false
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
-$(warning FDE doesn't work with the 11.0 manifest. You will not be able to decrypt MIUI ROMs)
+$(warning FDE doesn't work with the 12.1 manifest. You will not be able to decrypt MIUI ROMs)
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
 TARGET_RECOVERY_DEVICE_MODULES += \
