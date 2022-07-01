@@ -147,8 +147,14 @@ TW_DEFAULT_LANGUAGE := en
 TW_NO_LEGACY_PROPS := true
 TW_MAX_BRIGHTNESS := 4095
 TW_DEFAULT_BRIGHTNESS := 1950
-#
 
-# python, for ABX xml conversion (change to true to enable)
-TW_INCLUDE_PYTHON := true
+# ---- various build issues ---- #
+ALLOW_MISSING_DEPENDENCIES := true
+SOONG_ALLOW_MISSING_DEPENDENCIES := true
+
+# cure for "ELF binaries" problems
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# deal with "error: overriding commands for target" problems
+BUILD_BROKEN_DUP_RULES := true
 #
