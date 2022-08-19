@@ -18,4 +18,21 @@ export DEVICE=platina
 export DEVICE_COMMON=sdm660-common
 export VENDOR=xiaomi
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/libMiCameraHal.so)
+        "${PATCHELF}" --add-needed "libMiCameraHal_shim.so" "${2}"
+        ;;
+
+    esac
+
+    device_blob_fixup "$@"
+}
+
+if ! typeset -f device_blob_fixup > /dev/null; then
+    device_blob_fixup() {
+        :
+    }
+fi
+
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
