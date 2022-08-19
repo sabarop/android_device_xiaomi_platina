@@ -46,7 +46,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
-    libmegface
+    libmegface \
+    libMiCameraHal_shim
 
 # Consumerir
 BOARD_HAVE_IR := false
