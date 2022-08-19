@@ -84,6 +84,9 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libwfdaudioclient.so" "${2}"
             "${PATCHELF}" --add-needed "libwfdmediautils.so" "${2}"
             ;;
+        vendor/lib/libMiCameraHal.so)
+            "${PATCHELF}" --add-needed "libMiCameraHal_shim.so" "${2}"
+            ;;
     esac
 }
 
