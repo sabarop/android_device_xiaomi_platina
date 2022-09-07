@@ -26,6 +26,9 @@ LOCAL_PATH := device/xiaomi/lavender
 # fscrypt policy version
 TW_USE_FSCRYPT_POLICY := 1
 
+# api level
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # Decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
