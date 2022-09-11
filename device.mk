@@ -28,9 +28,6 @@ PRODUCT_PACKAGES += \
     libMegviiFacepp-0.5.2 \
     libmegface
 
-# Consumerir
-BOARD_HAVE_IR := false
-
 # Display calibration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/display/qdcm_calib_data_boe_fhd_video_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_boe_fhd_video_dsi_panel.xml \
@@ -40,6 +37,9 @@ PRODUCT_COPY_FILES += \
 # FM
 BOARD_HAVE_QCOM_FM := false
 
+# IR
+BOARD_HAVE_IR := false
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
@@ -48,7 +48,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
-# Ramdisk
+# Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.device.rc

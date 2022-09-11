@@ -25,9 +25,7 @@ TARGET_SCREEN_DENSITY := 440
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/xiaomi/platina.config
 
-# Manifest
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml
-
+# Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_VENDORIMAGE_PARTITION_SIZE := 838860800
 
@@ -39,6 +37,9 @@ VENDOR_SECURITY_PATCH := 2020-08-01
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# VINTF
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml
 
 # Inherit the proprietary files
 include vendor/xiaomi/platina/BoardConfigVendor.mk
