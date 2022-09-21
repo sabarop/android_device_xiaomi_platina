@@ -187,7 +187,7 @@ PRODUCT_COPY_FILES += \
 
 # DPM
 PRODUCT_PACKAGES += \
-    libshim_dpmframework
+    libcutils_shim
 
 # DRM
 PRODUCT_PACKAGES += \
