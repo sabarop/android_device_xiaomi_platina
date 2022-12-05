@@ -41,6 +41,8 @@ TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_SOURCE := kernel/xiaomi/platina
 TARGET_KERNEL_CONFIG := platina_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 
 # Kernel additional flags
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
