@@ -78,15 +78,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
         # -- end R11 settings --
 
-	# run a process after formatting data to work-around MTP issues
-	if [ "$FOX_VARIANT" = "permissive" ]; then
-	   export OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT=1
-	else
-	   unset OF_FORCE_CREATE_DATA_MEDIA_ON_FORMAT
-	   export OF_RUN_POST_FORMAT_PROCESS=1
-	fi
-
 	export OF_UNBIND_SDCARD_F2FS=1
+
+	# run a process after formatting data to work-around MTP issues
+	export OF_RUN_POST_FORMAT_PROCESS=1
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
