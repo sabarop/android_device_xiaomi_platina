@@ -41,24 +41,6 @@ TW_EXCLUDE_APEX := true
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
-# FDE [Not supported]
-TARGET_HW_DISK_ENCRYPTION := false
-ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
-$(warning FDE doesn't work with the 12.1 manifest. You will not be able to decrypt MIUI ROMs)
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
-
-TARGET_RECOVERY_DEVICE_MODULES += \
-	libhardware_legacy \
-	android.system.suspend@1.0
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware_legacy.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.system.suspend@1.0.so
-
-PRODUCT_COPY_FILES += \
-	$(OUT_DIR)/target/product/lavender/obj/SHARED_LIBRARIES/libcryptfs_hw_intermediates/libcryptfs_hw.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libcryptfs_hw.so
-endif
-
 # Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
 	libion \
