@@ -16,16 +16,16 @@
 # limitations under the License.
 #
 
-# Inherit from ASUS_X00TD device
-$(call inherit-product, device/asus/X00T/device.mk)
+# Inherit from Xiaomi MI 8 Lite device
+$(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := X00T
-PRODUCT_NAME := twrp_X00T
-PRODUCT_BRAND := asus
-PRODUCT_MODEL := ASUS_X00T
-PRODUCT_MANUFACTURER := asus
-PRODUCT_RELEASE_NAME := ASUS_Zenfone_Max_Pro_M1
+PRODUCT_DEVICE := platina
+PRODUCT_NAME := twrp_platina
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := MI 8 Lite
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_RELEASE_NAME := MI 8 Lite
