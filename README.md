@@ -1,6 +1,6 @@
 # Device tree for Xiaomi Redmi Note 7 (codenamed _"lavender"_)
 
-Kernel source: "https://github.com/LineageOS/android_kernel_xiaomi_sdm660.git"
+Kernel source: "https://github.com/PixelExperience-Devices/kernel_xiaomi_sdm660.git"
 ==================================
 ## Device specifications
 
@@ -29,7 +29,7 @@ Kernel source: "https://github.com/LineageOS/android_kernel_xiaomi_sdm660.git"
   /*
   *  Copyright (C) 2013-2020 The TWRP
   *
-  *  Copyright (C) 2019-2022 The OrangeFox Recovery Project
+  *  Copyright (C) 2019-2023 The OrangeFox Recovery Project
   *
   * This program is free software: you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
