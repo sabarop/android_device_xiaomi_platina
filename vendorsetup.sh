@@ -48,7 +48,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
-	export OF_NO_MIUI_PATCH_WARNING=1
 	export OF_USE_GREEN_LED=0
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
@@ -61,18 +60,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_NEW_MAGISKBOOT=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
         export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
+        export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
+	export OF_UNBIND_SDCARD_F2FS=1
 
         # use system (ROM) fingerprint where available
         export OF_USE_SYSTEM_FINGERPRINT=1
 
-	# OTA for custom ROMs
-        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-        export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-
-        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-        export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
-
-	export OF_UNBIND_SDCARD_F2FS=1
+	# vanilla build
+	export OF_VANILLA_BUILD=1
 
 	# run a process after formatting data to work-around MTP issues
 	export OF_RUN_POST_FORMAT_PROCESS=1
