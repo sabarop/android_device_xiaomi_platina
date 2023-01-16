@@ -69,6 +69,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# vanilla build
 	export OF_VANILLA_BUILD=1
 
+	# dispense with the entire OTA menu
+	export OF_DISABLE_OTA_MENU=1
+
 	# run a process after formatting data to work-around MTP issues
 	export OF_RUN_POST_FORMAT_PROCESS=1
 
