@@ -20,6 +20,8 @@
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+# Disable deprecated sdcardfs, enable casefold, projid
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 LOCAL_PATH := device/xiaomi/lavender
 
