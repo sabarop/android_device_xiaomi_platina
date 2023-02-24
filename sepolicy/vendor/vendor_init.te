@@ -9,6 +9,7 @@ allow init adsprpcd_file:file mounton;
 allow vendor_init cache_file:dir write;
 allow vendor_init cache_file:dir remove_name;
 allow vendor_init cache_file:file unlink;
+allow vendor_init cache_file:dir search;
 
-set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, camera_prop)
 allow ueventd metadata_file:dir search;
