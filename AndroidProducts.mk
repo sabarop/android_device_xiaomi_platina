@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_clover.mk
+    $(LOCAL_DIR)/omni_platina.mk
