@@ -69,6 +69,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# vanilla build
 	export OF_VANILLA_BUILD=1
 
+	# no additional check for MIUI props
+	export OF_NO_ADDITIONAL_MIUI_PROPS_CHECK=1
+
 	# dispense with the entire OTA menu
 	export OF_DISABLE_OTA_MENU=1
 
