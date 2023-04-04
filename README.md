@@ -1,6 +1,5 @@
 # Device tree for Xiaomi Redmi Note 7 (codenamed _"lavender"_)
 
-Kernel source: "https://github.com/PixelExperience-Devices/kernel_xiaomi_sdm660.git"
 ==================================
 ## Device specifications
 
@@ -23,6 +22,10 @@ Kernel source: "https://github.com/PixelExperience-Devices/kernel_xiaomi_sdm660.
 ## Device Picture
 
 ![Xiaomi Redmi Note 7](https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note7/gallery1-2.jpg "Redmi Note 7")
+
+---
+## Kernel sources:
+"https://github.com/kyasu/android_kernel_xiaomi_sdm660.git"
 
 ### Copyright
  ```
