@@ -33,7 +33,7 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Inherit properties.mk
-$(call inherit-product, $(DEVICE_PATH)/properties.mk)
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
 # Audio
 PRODUCT_COPY_FILES += \
