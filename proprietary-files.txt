@@ -635,6 +635,6 @@ vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 
-# Sensors
+# Sensors - from S62Pro
 vendor/lib/sensors.ssc.so
 vendor/lib64/sensors.ssc.so
