@@ -60,8 +60,8 @@
         <value>309</value>
         <value>362.5</value>
     </array>
-    <item name="cpu.awake">10.31</item>
-    <item name="cpu.idle">4.71</item>
+    <item name="cpu.idle">10.31</item>
+    <item name="cpu.suspend">4.71</item>
     <array name="memory.bandwidths">
         <value>22.7</value>
     </array>
