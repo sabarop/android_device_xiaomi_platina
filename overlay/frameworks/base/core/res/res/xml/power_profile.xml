@@ -2,8 +2,6 @@
 <device name="Android">
     <item name="screen.on.display0">74.49</item>
     <item name="screen.full.display0">280.13</item>
-    <item name="bluetooth.active">8.17</item>
-    <item name="bluetooth.on">0.61</item>
     <item name="wifi.on">0.39</item>
     <item name="wifi.active">166.24</item>
     <item name="wifi.scan">24.31</item>
