@@ -72,7 +72,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
+    $(DEVICE_PATH) \
     hardware/xiaomi
 
 # USB
