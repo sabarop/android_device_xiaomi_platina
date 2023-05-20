@@ -636,7 +636,5 @@ vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 
 # Sensors
-vendor/etc/sensors/hals.conf
-vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/sensors.ssc.so
 vendor/lib64/sensors.ssc.so
