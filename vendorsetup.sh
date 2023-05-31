@@ -88,5 +88,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	   export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
   	   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
  	fi
+else
+	if [ -z "$FOX_BUILD_DEVICE" -a -z "$BASH_SOURCE" ]; then
+		echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
+	fi
 fi
 #
