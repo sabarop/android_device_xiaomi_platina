@@ -63,6 +63,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
 	export OF_UNBIND_SDCARD_F2FS=1
 
+	# patch avb20 - some ROM recoveries try to overwrite custom recoveries
+	export OF_PATCH_AVB20=1
+
         # use system (ROM) fingerprint where available
         export OF_USE_SYSTEM_FINGERPRINT=1
 
