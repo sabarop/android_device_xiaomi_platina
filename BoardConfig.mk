@@ -27,9 +27,6 @@ include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/platina
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := platina
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2280
 TARGET_SCREEN_WIDTH := 1080
