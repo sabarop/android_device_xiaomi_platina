@@ -1,6 +1,9 @@
 # Audio
 persist.audio.fluence.voicecomm=true
 
+# Bluetooth
+bluetooth.device.default_name=Xiaomi MI 8 Lite
+
 # Camera
 persist.vendor.bokeh.switch.lux=290
 persist.vendor.camera.HAL3.enabled=1
