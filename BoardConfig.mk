@@ -37,6 +37,9 @@ TARGET_SCREEN_WIDTH := 1080
 # Build
 BUILD_BROKEN_DUP_RULES := true
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
