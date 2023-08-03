@@ -37,10 +37,6 @@ PRODUCT_PACKAGES += \
 # Exclude Apex
 TW_EXCLUDE_APEX := true
 
-# OEM otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/recovery/security/miui
-
 # Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
 	libion \
