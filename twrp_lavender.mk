@@ -30,9 +30,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Inherit from lavender device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-# Inherit any OrangeFox-specific settings
-$(call inherit-product-if-exists, $(DEVICE_PATH)/fox_lavender.mk)
-
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
