@@ -32,9 +32,9 @@ TW_USE_FSCRYPT_POLICY := 1
 PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Decryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
+#PRODUCT_PACKAGES += \
+#    qcom_decrypt \
+#    qcom_decrypt_fbe
 
 # Exclude Apex
 TW_EXCLUDE_APEX := true
