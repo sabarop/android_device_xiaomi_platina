@@ -23,13 +23,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 # Disable deprecated sdcardfs, enable casefold, projid
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-LOCAL_PATH := device/xiaomi/lavender
+LOCAL_PATH := device/xiaomi/clover
 
 # fscrypt policy version
 TW_USE_FSCRYPT_POLICY := 1
 
 # api level
-PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_SHIPPING_API_LEVEL := 27
 
 # Decryption
 #PRODUCT_PACKAGES += \
