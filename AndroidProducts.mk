@@ -21,4 +21,8 @@
 PRODUCT_MAKEFILES := \
      $(LOCAL_DIR)/twrp_lavender.mk
 
-COMMON_LUNCH_CHOICES := twrp_lavender-eng
+COMMON_LUNCH_CHOICES := \
+    twrp_lavender-user \
+    twrp_lavender-userdebug \
+    twrp_lavender-eng
+#
