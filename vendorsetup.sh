@@ -43,6 +43,16 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
         export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
+        
+        # dynamic/retrofitted
+	if [ "$FOX_USE_DYNAMIC_PARTITIONS" = "1" ]; then
+		export FOX_VANILLA_BUILD=1
+		export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
+		export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+        	export OF_NO_ADDITIONAL_MIUI_PROPS_CHECK=1
+   		export OF_DISABLE_OTA_MENU=1
+   		export FOX_VARIANT="dynamic"
+	fi
 else
 	if [ -z "$FOX_BUILD_DEVICE" -a -z "$BASH_SOURCE" ]; then
 		echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
