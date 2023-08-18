@@ -25,7 +25,8 @@
 
 ---
 ## Kernel sources:
-"https://github.com/kyasu/android_kernel_xiaomi_sdm660.git"
+Standard version: "https://github.com/kyasu/android_kernel_xiaomi_sdm660.git"
+Dynamic version:  "https://github.com/pix106/android_kernel_xiaomi_southwest-4.19.git"
 
 ### Copyright
  ```
