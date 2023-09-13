@@ -579,6 +579,8 @@ typedef struct cam_capability{
     /* true Portrait info */
     cam_true_portrait_t  true_portrait_settings_need;
 
+    volatile char xiaomi_reversed1[64];
+
     /* Sensor type information */
     cam_sensor_type_t sensor_type;
 

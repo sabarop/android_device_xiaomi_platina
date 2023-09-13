@@ -1707,6 +1707,7 @@ typedef struct {
     int32_t est_snap_iso_value;
     uint32_t est_snap_luma;
     uint32_t est_snap_target;
+    float xiaomi_reversed[2];
 } cam_3a_params_t;
 
 typedef struct {
