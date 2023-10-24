@@ -25,4 +25,4 @@
 /dev/block/bootdevice/by-name/boot                       /boot                emmc    defaults                                                                                        recoveryonly
 /dev/block/bootdevice/by-name/recovery                   /recovery            emmc    defaults                                                                                        recoveryonly
 
-/dev/block/by-name/logdump                               /metadata            ext4    nosuid,nodev,noatime,discard                                                                    wait,check,formattable,metadata_csum
+/dev/block/by-name/logdump                               /metadata            ext4    nosuid,nodev,noatime,discard,data=journal,commit=1                                              wait,check,formattable,metadata_csum
