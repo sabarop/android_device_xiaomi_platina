@@ -47,8 +47,6 @@ TARGET_USES_UEFI := true
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := lavender
@@ -152,4 +150,3 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # deal with "error: overriding commands for target" problems
 BUILD_BROKEN_DUP_RULES := true
-#

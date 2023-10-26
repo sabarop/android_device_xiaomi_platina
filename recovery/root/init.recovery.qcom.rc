@@ -34,4 +34,3 @@ on fs
 on boot
     start health-hal-2-1
     setprop sys.usb.config adb
-#

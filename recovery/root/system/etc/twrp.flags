@@ -36,8 +36,7 @@
 # Removable storage
 /usb_otg	auto /dev/block/sda1                    /dev/block/sda          flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
 /sdcard1	auto /dev/block/mmcblk1p1               /dev/block/mmcblk1      flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
-#
+
 /keymaster        emmc     /dev/block/bootdevice/by-name/keymaster    		flags=display="Keymaster";backup=1;flashimg=1
 /keystore         emmc     /dev/block/bootdevice/by-name/keystore
 /tz               emmc     /dev/block/bootdevice/by-name/tz           		flags=display="TZ";backup=1;flashimg=1
-#

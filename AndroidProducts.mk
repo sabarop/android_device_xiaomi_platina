@@ -25,4 +25,3 @@ COMMON_LUNCH_CHOICES := \
     twrp_lavender-user \
     twrp_lavender-userdebug \
     twrp_lavender-eng
-#

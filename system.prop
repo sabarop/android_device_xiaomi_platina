@@ -10,4 +10,3 @@ ro.product.board=sdm660
 ro.board.platform=sdm660
 ro.boot.avb_version=1.0
 ro.boot.vbmeta.avb_version=1.0
-#
