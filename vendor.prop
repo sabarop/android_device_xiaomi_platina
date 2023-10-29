@@ -16,3 +16,9 @@ persist.vendor.imx376_ofilm.low.lux=290
 persist.vendor.imx376_sunny.light.lux=275
 persist.vendor.imx376_sunny.low.lux=290
 persist.vendor.camera.perflock.enable=0
+
+# Crypto
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.volume.metadata.method=dm-default-key
+ro.crypto.volume.options=::v2
