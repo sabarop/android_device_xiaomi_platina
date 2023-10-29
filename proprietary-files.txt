@@ -603,12 +603,14 @@ vendor/lib64/libgf_hal.so
 vendor/lib64/vendor.goodix.hardware.fingerprintextension@1.0.so
 
 # Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 
-# Graphics firmware
+# Gatekeeper QTI - from hon660
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+vendor/lib/hw/gatekeeper-impl-qti.so:vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/gatekeeper-impl-qti.so:vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+
+# Graphics Firmware - from lavender
 vendor/firmware/a512_zap.b00
 vendor/firmware/a512_zap.b01
 vendor/firmware/a512_zap.b02
@@ -625,30 +627,35 @@ vendor/firmware/a530v3_seq.fw2
 vendor/firmware/a540_gpmu.fw2
 
 # Keymaster QTI
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
-vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
-vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 
-# Sensors
+# Keymaster QTI - from hon660
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/lib/hw/keymaster-impl-qti.so:vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib64/hw/keymaster-impl-qti.so:vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
+
+# Sensors - from hon660
+-system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+system_ext/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+system_ext/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/bin/sensors.qti
-vendor/etc/sensors/hals.conf
-vendor/etc/sensors/sensor_def_qcomdev.conf
-vendor/lib/hw/activity_recognition.sdm660.so
-vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
+vendor/lib/libssc_default_listener.so
+vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/activity_recognition.sdm660.so
-vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
+vendor/lib64/libssc_default_listener.so
+vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
 
-# Thermal
-vendor/etc/thermal-engine.conf
+# Thermal - from hon660
 vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+vendor/etc/init/init_thermal-engine.rc
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
 
-# Wifi
+# WiFi - from hon660
 vendor/bin/cnss-daemon
