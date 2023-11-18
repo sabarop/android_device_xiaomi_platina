@@ -27,7 +27,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/xiaomi/platina.config
+TARGET_KERNEL_CONFIG := platina_defconfig
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
