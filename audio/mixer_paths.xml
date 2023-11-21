@@ -1666,11 +1666,6 @@
         <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
     </path>
 
-    <path name="play-fm bt-a2dp">
-        <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
-        <path name="bt-a2dp" />
-    </path>
-
     <path name="incall-rec-uplink">
         <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="1" />
     </path>
