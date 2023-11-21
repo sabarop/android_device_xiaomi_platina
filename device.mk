@@ -58,19 +58,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
-# Partitions
-PRODUCT_PACKAGES += \
-    e2fsck_ramdisk \
-    tune2fs_ramdisk \
-    resize2fs_ramdisk
-
 # Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.device.rc
 
 # Sensors
