@@ -1960,7 +1960,6 @@
     </path>
 
     <path name="spkr-vi-record">
-	<ctl name="SEC_MI2S_RX_VI_FB_MUX" value="SEC_MI2S_TX" />
     </path>
 
     <!-- VoIP Rx settings -->
