@@ -546,7 +546,6 @@
     </path>
 
     <path name="deep-buffer-playback speaker-safe-and-headphones">
-        <path name="deep-buffer-playback headphones" />
         <path name="deep-buffer-playback" />
     </path>
 
@@ -634,7 +633,6 @@
     </path>
 
     <path name="low-latency-playback speaker-safe-and-headphones">
-        <path name="low-latency-playback headphones" />
         <path name="low-latency-playback" />
     </path>
 
@@ -665,7 +663,6 @@
 
     <path name="audio-ull-playback speaker-safe-and-headphones">
         <path name="audio-ull-playback" />
-        <path name="audio-ull-playback headphones" />
     </path>
 
     <path name="audio-ull-playback hdmi">
@@ -827,7 +824,6 @@
     </path>
 
     <path name="compress-offload-playback speaker-safe-and-headphones">
-        <path name="compress-offload-playback headphones" />
         <path name="compress-offload-playback" />
     </path>
 
@@ -918,7 +914,6 @@
     </path>
 
     <path name="compress-offload-playback2 speaker-safe-and-headphones">
-        <path name="compress-offload-playback2 headphones" />
         <path name="compress-offload-playback2" />
     </path>
 
@@ -1009,7 +1004,6 @@
     </path>
 
     <path name="compress-offload-playback3 speaker-safe-and-headphones">
-        <path name="compress-offload-playback3 headphones" />
         <path name="compress-offload-playback3" />
     </path>
 
@@ -1100,7 +1094,6 @@
     </path>
 
     <path name="compress-offload-playback4 speaker-safe-and-headphones">
-        <path name="compress-offload-playback4 headphones" />
         <path name="compress-offload-playback4" />
     </path>
 
@@ -1191,7 +1184,6 @@
     </path>
 
     <path name="compress-offload-playback5 speaker-safe-and-headphones">
-        <path name="compress-offload-playback5 headphones" />
         <path name="compress-offload-playback5" />
     </path>
 
@@ -1282,7 +1274,6 @@
     </path>
 
     <path name="compress-offload-playback6 speaker-safe-and-headphones">
-        <path name="compress-offload-playback6 headphones" />
         <path name="compress-offload-playback6" />
     </path>
 
@@ -1373,7 +1364,6 @@
     </path>
 
     <path name="compress-offload-playback7 speaker-safe-and-headphones">
-        <path name="compress-offload-playback7 headphones" />
         <path name="compress-offload-playback7" />
     </path>
 
@@ -1463,7 +1453,6 @@
     </path>
 
     <path name="compress-offload-playback8 speaker-safe-and-headphones">
-        <path name="compress-offload-playback8 headphones" />
         <path name="compress-offload-playback8" />
     </path>
 
@@ -1554,7 +1543,6 @@
     </path>
 
     <path name="compress-offload-playback9 speaker-safe-and-headphones">
-        <path name="compress-offload-playback9 headphones" />
         <path name="compress-offload-playback9" />
     </path>
 
