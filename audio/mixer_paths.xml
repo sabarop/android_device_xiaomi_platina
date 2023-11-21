@@ -2656,7 +2656,7 @@
     </path>
 
     <path name="speaker-safe-and-bt-a2dp">
-        <path name="speakersafe" />
+        <path name="speaker-safe" />
         <path name="bt-a2dp" />
     </path>
 
