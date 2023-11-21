@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2015-2017, 2020 The Linux Foundation. All rights reserved.    -->
+<!-- Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.    -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -24,37 +24,6 @@
 <!-- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,  -->
 <!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
 <!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
-
-<!--
-Changes from Qualcomm Innovation Center are provided under the following license:
-Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-Redistribution and use in source and binary forms, with or without
-modification, are permitted (subject to the limitations in the
-disclaimer below) provided that the following conditions are met:
-   * Redistributions of source code must retain the above copyright
-     notice, this list of conditions and the following disclaimer.
-   * Redistributions in binary form must reproduce the above
-     copyright notice, this list of conditions and the following
-     disclaimer in the documentation and/or other materials provided
-     with the distribution.
-   * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
-     contributors may be used to endorse or promote products derived
-     from this software without specific prior written permission.
-NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
-GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
-HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <mixer>
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
@@ -223,8 +192,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- HFP end -->
     <!-- echo reference -->
     <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
-    <ctl name="AUDIO_REF_EC_UL10 MUX" value="None" />
-    <ctl name="EC Reference Channels" value="Zero"/>
     <!-- usb headset -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
@@ -267,9 +234,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <ctl name="VoiceMMode1_Tx Mixer AFE_PCM_TX_MMode1" value="0" />
     <ctl name="USB_AUDIO_RX_Voice Mixer VoiceMMode1" value="0" />
     <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="0" />
-    <!-- Multimode Voice1 proxy-Port -->
-    <ctl name="PROXY_RX_Voice Mixer VoiceMMode1" value="0" />
-    <ctl name="VoiceMMode1_Tx Mixer PROXY_TX_MMode1" value="0" />
     <!-- Miltimode Voice1 end-->
 
     <!-- Multimode Voice2 -->
@@ -287,9 +251,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="0" />
     <ctl name="USB_AUDIO_RX_Voice Mixer VoiceMMode2" value="0" />
     <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="0" />
-    <!-- Multimode Voice2 proxy-Port -->
-    <ctl name="PROXY_RX_Voice Mixer VoiceMMode2" value="0" />
-    <ctl name="VoiceMMode2_Tx Mixer PROXY_TX_MMode2" value="0" />
     <!-- Multimode Voice2 end-->
 
     <!-- Voice external ec. reference -->
@@ -306,15 +267,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- RT Proxy Cal end -->
 
     <!-- Incall Recording -->
-    <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="0" />
-    <ctl name="MultiMedia9 Mixer VOC_REC_DL" value="0" />
+    <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
+    <ctl name="MultiMedia1 Mixer VOC_REC_DL" value="0" />
     <ctl name="MultiMedia8 Mixer VOC_REC_UL" value="0" />
     <ctl name="MultiMedia8 Mixer VOC_REC_DL" value="0" />
     <!-- Incall Recording End -->
 
     <!-- Incall Music -->
     <ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
-    <ctl name="Incall_Music Audio Mixer MultiMedia9" value="0" />
     <ctl name="Incall_Music Audio Mixer MultiMedia1" value="0" />
     <ctl name="Incall_Music_2 Audio Mixer MultiMedia2" value="0" />
     <ctl name="Incall_Music_2 Audio Mixer MultiMedia1" value="0" />
@@ -345,18 +305,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- audio record compress end-->
 
     <!-- split a2dp -->
+    <ctl name="BT SampleRate" value="KHZ_8" />
+    <ctl name="AFE Input Channels" value="Zero" />
     <ctl name="SLIM7_RX ADM Channels" value="Zero" />
     <!-- split a2dp end-->
-
-    <!-- VoIP over audio -->
-    <ctl name="MultiMedia10 Mixer INT3_MI2S_TX" value="0" />
-    <ctl name="MultiMedia10 Mixer SLIM_7_TX" value="0" />
-    <ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="0" />
-    <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia10" value="0" />
-    <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="0" />
-    <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="0" />
-    <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="0" />
-    <!-- VoIP over audio -->
 
     <!-- ADSP testfwk -->
     <ctl name="INT4_MI2S_RX_DL_HL Switch" value="0" />
@@ -732,77 +684,17 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="echo-reference">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT4_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference handset">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT0_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="One"/>
     </path>
 
     <path name="echo-reference headphones">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT0_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
-    <path name="echo-reference bt-sco">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT0_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference bt-sco-wb">
-        <path name="echo-reference bt-sco" />
-    </path>
-
-    <path name="echo-reference bt-sco-swb">
-        <path name="echo-reference bt-sco" />
+    <path name="echo-reference speaker">
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT4_MI2S_RX" />
     </path>
 
     <path name="echo-reference headphones-44.1">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT4_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference headset">
-        <path name="echo-reference headphones" />
-     </path>
-
-    <path name="echo-reference speaker">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="I2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference-voip">
-        <ctl name="AUDIO_REF_EC_UL10 MUX" value="INT0_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference-voip handset">
-        <ctl name="AUDIO_REF_EC_UL10 MUX" value="I2S_RX" />
-        <ctl name="EC Reference Channels" value="One"/>
-    </path>
-
-    <path name="echo-reference-voip headphones">
-      <ctl name="AUDIO_REF_EC_UL10 MUX" value="INT0_MI2S_RX" />
-      <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference-voip headphones-44.1">
-      <ctl name="AUDIO_REF_EC_UL10 MUX" value="INT0_MI2S_RX" />
-      <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference-voip bt-sco">
-        <ctl name="AUDIO_REF_EC_UL10 MUX" value="INT0_MI2S_RX" />
-        <ctl name="EC Reference Channels" value="Two"/>
-    </path>
-
-    <path name="echo-reference-voip bt-sco-wb">
-        <path name="echo-reference-voip bt-sco" />
-    </path>
-
-    <path name="echo-reference-voip bt-sco-swb">
-        <path name="echo-reference-voip bt-sco" />
     </path>
 
     <path name="deep-buffer-playback">
@@ -810,10 +702,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="deep-buffer-playback speaker-protected">
-        <path name="deep-buffer-playback" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-safe">
         <path name="deep-buffer-playback" />
     </path>
 
@@ -830,17 +718,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="deep-buffer-playback" />
     </path>
 
-    <path name="deep-buffer-playback speaker-safe-and-hdmi">
-        <path name="deep-buffer-playback hdmi" />
-        <path name="deep-buffer-playback" />
-    </path>
-
     <path name="deep-buffer-playback speaker-and-display-port">
-        <path name="deep-buffer-playback display-port" />
-        <path name="deep-buffer-playback" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-safe-and-display-port">
         <path name="deep-buffer-playback display-port" />
         <path name="deep-buffer-playback" />
     </path>
@@ -850,6 +728,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="deep-buffer-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
 
@@ -880,16 +759,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="deep-buffer-playback" />
     </path>
 
-    <path name="deep-buffer-playback speaker-safe-and-usb-headphones">
-        <path name="deep-buffer-playback usb-headphones" />
-        <path name="deep-buffer-playback" />
-    </path>
-
     <path name="deep-buffer-playback headphones">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <path name="deep-buffer-playback headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
@@ -898,25 +768,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="deep-buffer-playback" />
     </path>
 
-    <path name="deep-buffer-playback speaker-safe-and-headphones">
-        <path name="deep-buffer-playback headphones" />
-        <path name="deep-buffer-playback" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-headphones-hifi-filter">
-        <path name="deep-buffer-playback headphones-hifi-filter" />
-        <path name="deep-buffer-playback speaker" />
-    </path>
-
     <path name="low-latency-playback">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback speaker-protected">
-        <path name="low-latency-playback" />
-    </path>
-
-    <path name="low-latency-playback speaker-safe">
         <path name="low-latency-playback" />
     </path>
 
@@ -933,6 +789,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="low-latency-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="low-latency-playback bt-sco" />
     </path>
 
@@ -951,17 +808,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="low-latency-playback" />
     </path>
 
-    <path name="low-latency-playback speaker-safe-and-hdmi">
-        <path name="low-latency-playback hdmi" />
-        <path name="low-latency-playback" />
-    </path>
-
     <path name="low-latency-playback speaker-and-display-port">
-        <path name="low-latency-playback display-port" />
-        <path name="low-latency-playback" />
-    </path>
-
-    <path name="low-latency-playback speaker-safe-and-display-port">
         <path name="low-latency-playback display-port" />
         <path name="low-latency-playback" />
     </path>
@@ -983,30 +830,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="low-latency-playback" />
     </path>
 
-    <path name="low-latency-playback speaker-safe-and-usb-headphones">
-        <path name="low-latency-playback usb-headphones" />
-        <path name="low-latency-playback" />
-    </path>
-
     <path name="low-latency-playback headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback speaker-and-headphones">
-        <path name="low-latency-playback headphones" />
-        <path name="low-latency-playback" />
-    </path>
-
-    <path name="low-latency-playback headphones-hifi-filter">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia5" value="1" />
-    </path>
-
-    <path name="low-latency-playback speaker-and-headphones-hifi-filter">
-        <path name="low-latency-playback headphones-hifi-filter" />
-        <path name="low-latency-playback speaker" />
-    </path>
-
-    <path name="low-latency-playback speaker-safe-and-headphones">
         <path name="low-latency-playback headphones" />
         <path name="low-latency-playback" />
     </path>
@@ -1019,29 +847,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="audio-ull-playback" />
     </path>
 
-    <path name="audio-ull-playback speaker-safe">
-        <path name="audio-ull-playback" />
-    </path>
-
     <path name="audio-ull-playback headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
 
     <path name="audio-ull-playback speaker-and-headphones">
-        <path name="audio-ull-playback" />
-        <path name="audio-ull-playback headphones" />
-    </path>
-
-    <path name="audio-ull-playback headphones-hifi-filter">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia8" value="1" />
-    </path>
-
-    <path name="audio-ull-playback speaker-and-headphones-hifi-filter">
-        <path name="audio-ull-playback speaker" />
-        <path name="audio-ull-playback headphones-hifi-filter" />
-    </path>
-
-    <path name="audio-ull-playback speaker-safe-and-headphones">
         <path name="audio-ull-playback" />
         <path name="audio-ull-playback headphones" />
     </path>
@@ -1059,6 +869,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="audio-ull-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="audio-ull-playback bt-sco" />
     </path>
 
@@ -1077,17 +888,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="audio-ull-playback" />
     </path>
 
-    <path name="audio-ull-playback speaker-safe-and-hdmi">
-        <path name="audio-ull-playback hdmi" />
-        <path name="audio-ull-playback" />
-    </path>
-
     <path name="audio-ull-playback speaker-and-display-port">
-        <path name="audio-ull-playback display-port" />
-        <path name="audio-ull-playback" />
-    </path>
-
-    <path name="audio-ull-playback speaker-safe-and-display-port">
         <path name="audio-ull-playback display-port" />
         <path name="audio-ull-playback" />
     </path>
@@ -1124,10 +925,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback" />
     </path>
 
-    <path name="compress-offload-playback speaker-safe">
-        <path name="compress-offload-playback" />
-    </path>
-
     <path name="compress-offload-playback hdmi">
         <ctl name="HDMI Mixer MultiMedia4" value="1" />
     </path>
@@ -1149,6 +946,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback bt-sco" />
     </path>
 
@@ -1167,17 +965,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback" />
     </path>
 
-    <path name="compress-offload-playback speaker-safe-and-hdmi">
-        <path name="compress-offload-playback hdmi" />
-        <path name="compress-offload-playback" />
-    </path>
-
     <path name="compress-offload-playback speaker-and-display-port">
-        <path name="compress-offload-playback display-port" />
-        <path name="compress-offload-playback" />
-    </path>
-
-    <path name="compress-offload-playback speaker-safe-and-display-port">
         <path name="compress-offload-playback display-port" />
         <path name="compress-offload-playback" />
     </path>
@@ -1199,20 +987,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback" />
     </path>
 
-    <path name="compress-offload-playback speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback usb-headphones" />
-        <path name="compress-offload-playback" />
-    </path>
-
     <path name="compress-offload-playback headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="compress-offload-playback headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia4" value="1" />
-    </path>
-
-    <path name="compress-offload-playback headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
@@ -1224,21 +1003,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback" />
     </path>
 
-    <path name="compress-offload-playback speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback headphones-hifi-filter" />
-        <path name="compress-offload-playback speaker" />
-    </path>
-
-    <path name="compress-offload-playback speaker-safe-and-headphones">
-        <path name="compress-offload-playback headphones" />
-        <path name="compress-offload-playback" />
-    </path>
-
     <path name="compress-offload-playback2">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia7" value="1" />
-    </path>
-
-    <path name="compress-offload-playback2 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
@@ -1255,6 +1020,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback2 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback2 bt-sco" />
     </path>
 
@@ -1273,17 +1039,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback2" />
     </path>
 
-    <path name="compress-offload-playback2 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback2 hdmi" />
-        <path name="compress-offload-playback2" />
-    </path>
-
     <path name="compress-offload-playback2 speaker-and-display-port">
-        <path name="compress-offload-playback2 display-port" />
-        <path name="compress-offload-playback2" />
-    </path>
-
-    <path name="compress-offload-playback2 speaker-safe-and-display-port">
         <path name="compress-offload-playback2 display-port" />
         <path name="compress-offload-playback2" />
     </path>
@@ -1305,20 +1061,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback2" />
     </path>
 
-    <path name="compress-offload-playback2 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback2 usb-headphones" />
-        <path name="compress-offload-playback2" />
-    </path>
-
     <path name="compress-offload-playback2 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
     <path name="compress-offload-playback2 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia7" value="1" />
-    </path>
-
-    <path name="compress-offload-playback2 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
@@ -1330,21 +1077,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback2" />
     </path>
 
-    <path name="compress-offload-playback2 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback2 headphones-hifi-filter" />
-        <path name="compress-offload-playback2 speaker" />
-    </path>
-
-    <path name="compress-offload-playback2 speaker-safe-and-headphones">
-        <path name="compress-offload-playback2 headphones" />
-        <path name="compress-offload-playback2" />
-    </path>
-
     <path name="compress-offload-playback3">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="compress-offload-playback3 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
@@ -1361,6 +1094,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback3 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback3 bt-sco" />
     </path>
 
@@ -1379,17 +1113,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback3" />
     </path>
 
-    <path name="compress-offload-playback3 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback3 hdmi" />
-        <path name="compress-offload-playback3" />
-    </path>
-
     <path name="compress-offload-playback3 speaker-and-display-port">
-        <path name="compress-offload-playback3 display-port" />
-        <path name="compress-offload-playback3" />
-    </path>
-
-    <path name="compress-offload-playback3 speaker-safe-and-display-port">
         <path name="compress-offload-playback3 display-port" />
         <path name="compress-offload-playback3" />
     </path>
@@ -1411,20 +1135,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback3" />
     </path>
 
-    <path name="compress-offload-playback3 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback3 usb-headphones" />
-        <path name="compress-offload-playback3" />
-    </path>
-
     <path name="compress-offload-playback3 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
     <path name="compress-offload-playback3 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="compress-offload-playback3 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
@@ -1436,21 +1151,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback3" />
     </path>
 
-    <path name="compress-offload-playback3 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback3 headphones-hifi-filter" />
-        <path name="compress-offload-playback3 speaker" />
-    </path>
-
-    <path name="compress-offload-playback3 speaker-safe-and-headphones">
-        <path name="compress-offload-playback3 headphones" />
-        <path name="compress-offload-playback3" />
-    </path>
-
     <path name="compress-offload-playback4">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia11" value="1" />
-    </path>
-
-    <path name="compress-offload-playback4 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
@@ -1467,6 +1168,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback4 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback4 bt-sco" />
     </path>
 
@@ -1485,20 +1187,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback4" />
     </path>
 
-    <path name="compress-offload-playback4 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback4 hdmi" />
-        <path name="compress-offload-playback4" />
-    </path>
-
     <path name="compress-offload-playback4 speaker-and-display-port">
         <path name="compress-offload-playback4 display-port" />
         <path name="compress-offload-playback4" />
     </path>
 
-    <path name="compress-offload-playback4 speaker-safe-and-display-port">
-        <path name="compress-offload-playback4 display-port" />
-        <path name="compress-offload-playback4" />
-    </path>
 
     <path name="compress-offload-playback4 afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia11" value="1" />
@@ -1517,20 +1210,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback4" />
     </path>
 
-    <path name="compress-offload-playback4 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback4 usb-headphones" />
-        <path name="compress-offload-playback4" />
-    </path>
-
     <path name="compress-offload-playback4 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
     <path name="compress-offload-playback4 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia11" value="1" />
-    </path>
-
-    <path name="compress-offload-playback4 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
@@ -1542,21 +1226,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback4" />
     </path>
 
-    <path name="compress-offload-playback4 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback4 headphones-hifi-filter" />
-        <path name="compress-offload-playback4 speaker" />
-    </path>
-
-    <path name="compress-offload-playback4 speaker-safe-and-headphones">
-        <path name="compress-offload-playback4 headphones" />
-        <path name="compress-offload-playback4" />
-    </path>
-
     <path name="compress-offload-playback5">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia12" value="1" />
-    </path>
-
-    <path name="compress-offload-playback5 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
@@ -1573,6 +1243,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback5 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback5 bt-sco" />
     </path>
 
@@ -1591,17 +1262,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback5" />
     </path>
 
-    <path name="compress-offload-playback5 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback5 hdmi" />
-        <path name="compress-offload-playback5" />
-    </path>
-
     <path name="compress-offload-playback5 speaker-and-display-port">
-        <path name="compress-offload-playback5 display-port" />
-        <path name="compress-offload-playback5" />
-    </path>
-
-    <path name="compress-offload-playback5 speaker-safe-and-display-port">
         <path name="compress-offload-playback5 display-port" />
         <path name="compress-offload-playback5" />
     </path>
@@ -1623,20 +1284,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback5" />
     </path>
 
-    <path name="compress-offload-playback5 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback5 usb-headphones" />
-        <path name="compress-offload-playback5" />
-    </path>
-
     <path name="compress-offload-playback5 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
     <path name="compress-offload-playback5 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia12" value="1" />
-    </path>
-
-    <path name="compress-offload-playback5 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
@@ -1648,21 +1300,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback5" />
     </path>
 
-    <path name="compress-offload-playback5 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback5 headphones-hifi-filter" />
-        <path name="compress-offload-playback5 speaker" />
-    </path>
-
-    <path name="compress-offload-playback5 speaker-safe-and-headphones">
-        <path name="compress-offload-playback5 headphones" />
-        <path name="compress-offload-playback5" />
-    </path>
-
     <path name="compress-offload-playback6">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia13" value="1" />
-    </path>
-
-    <path name="compress-offload-playback6 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
@@ -1679,6 +1317,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback6 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback6 bt-sco" />
     </path>
 
@@ -1697,17 +1336,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback6" />
     </path>
 
-    <path name="compress-offload-playback6 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback6 hdmi" />
-        <path name="compress-offload-playback6" />
-    </path>
-
     <path name="compress-offload-playback6 speaker-and-display-port">
-        <path name="compress-offload-playback6 display-port" />
-        <path name="compress-offload-playback6" />
-    </path>
-
-    <path name="compress-offload-playback6 speaker-safe-and-display-port">
         <path name="compress-offload-playback6 display-port" />
         <path name="compress-offload-playback6" />
     </path>
@@ -1729,20 +1358,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback6" />
     </path>
 
-    <path name="compress-offload-playback6 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback6 usb-headphones" />
-        <path name="compress-offload-playback6" />
-    </path>
-
     <path name="compress-offload-playback6 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
     <path name="compress-offload-playback6 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia13" value="1" />
-    </path>
-
-    <path name="compress-offload-playback6 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
@@ -1754,21 +1374,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback6" />
     </path>
 
-    <path name="compress-offload-playback6 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback6 headphones-hifi-filter" />
-        <path name="compress-offload-playback6 speaker" />
-    </path>
-
-    <path name="compress-offload-playback6 speaker-safe-and-headphones">
-        <path name="compress-offload-playback6 headphones" />
-        <path name="compress-offload-playback6" />
-    </path>
-
     <path name="compress-offload-playback7">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia14" value="1" />
-    </path>
-
-    <path name="compress-offload-playback7 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
@@ -1785,6 +1391,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback7 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback7 bt-sco" />
     </path>
 
@@ -1803,17 +1410,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback7" />
     </path>
 
-    <path name="compress-offload-playback7 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback7 hdmi" />
-        <path name="compress-offload-playback7" />
-    </path>
-
     <path name="compress-offload-playback7 speaker-and-display-port">
-        <path name="compress-offload-playback7 display-port" />
-        <path name="compress-offload-playback7" />
-    </path>
-
-    <path name="compress-offload-playback7 speaker-safe-and-display-port">
         <path name="compress-offload-playback7 display-port" />
         <path name="compress-offload-playback7" />
     </path>
@@ -1835,20 +1432,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback7" />
     </path>
 
-    <path name="compress-offload-playback7 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback7 usb-headphones" />
-        <path name="compress-offload-playback7" />
-    </path>
-
     <path name="compress-offload-playback7 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="compress-offload-playback7 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia14" value="1" />
-    </path>
-
-    <path name="compress-offload-playback7 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
@@ -1860,21 +1448,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback7" />
     </path>
 
-    <path name="compress-offload-playback7 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback7 headphones-hifi-filter" />
-        <path name="compress-offload-playback7 speaker" />
-    </path>
-
-    <path name="compress-offload-playback7 speaker-safe-and-headphones">
-        <path name="compress-offload-playback7 headphones" />
-        <path name="compress-offload-playback7" />
-    </path>
-
     <path name="compress-offload-playback8">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia15" value="1" />
-    </path>
-
-    <path name="compress-offload-playback8 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
@@ -1891,6 +1465,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback8 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback8 bt-sco" />
     </path>
 
@@ -1909,17 +1484,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback8" />
     </path>
 
-    <path name="compress-offload-playback8 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback8 hdmi" />
-        <path name="compress-offload-playback8" />
-    </path>
-
     <path name="compress-offload-playback8 speaker-and-display-port">
-        <path name="compress-offload-playback8 display-port" />
-        <path name="compress-offload-playback8" />
-    </path>
-
-    <path name="compress-offload-playback8 speaker-safe-and-display-port">
         <path name="compress-offload-playback8 display-port" />
         <path name="compress-offload-playback8" />
     </path>
@@ -1941,20 +1506,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback8" />
     </path>
 
-    <path name="compress-offload-playback8 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback8 usb-headphones" />
-        <path name="compress-offload-playback8" />
-    </path>
-
     <path name="compress-offload-playback8 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
     <path name="compress-offload-playback8 headphones-44.1">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia15" value="1" />
-    </path>
-
-    <path name="compress-offload-playback8 headphones-hifi-filter">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
@@ -1966,21 +1522,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback8" />
     </path>
 
-    <path name="compress-offload-playback8 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback8 headphones-hifi-filter" />
-        <path name="compress-offload-playback8 speaker" />
-    </path>
-
-    <path name="compress-offload-playback8 speaker-safe-and-headphones">
-        <path name="compress-offload-playback8 headphones" />
-        <path name="compress-offload-playback8" />
-    </path>
-
     <path name="compress-offload-playback9">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia16" value="1" />
-    </path>
-
-    <path name="compress-offload-playback9 speaker-safe">
         <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
@@ -1997,6 +1539,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-offload-playback9 bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-offload-playback9 bt-sco" />
     </path>
 
@@ -2015,17 +1558,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback9" />
     </path>
 
-    <path name="compress-offload-playback9 speaker-safe-and-hdmi">
-        <path name="compress-offload-playback9 hdmi" />
-        <path name="compress-offload-playback9" />
-    </path>
-
     <path name="compress-offload-playback9 speaker-and-display-port">
-        <path name="compress-offload-playback9 display-port" />
-        <path name="compress-offload-playback9" />
-    </path>
-
-    <path name="compress-offload-playback9 speaker-safe-and-display-port">
         <path name="compress-offload-playback9 display-port" />
         <path name="compress-offload-playback9" />
     </path>
@@ -2047,11 +1580,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback9" />
     </path>
 
-    <path name="compress-offload-playback9 speaker-safe-and-usb-headphones">
-        <path name="compress-offload-playback9 usb-headphones" />
-        <path name="compress-offload-playback9" />
-    </path>
-
     <path name="compress-offload-playback9 headphones">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
@@ -2060,24 +1588,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
-    <path name="compress-offload-playback9 headphones-hifi-filter">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia16" value="1" />
-    </path>
-
     <path name="compress-offload-playback9 headphones-dsd">
     </path>
 
     <path name="compress-offload-playback9 speaker-and-headphones">
-        <path name="compress-offload-playback9 headphones" />
-        <path name="compress-offload-playback9" />
-    </path>
-
-    <path name="compress-offload-playback9 speaker-and-headphones-hifi-filter">
-        <path name="compress-offload-playback9 headphones-hifi-filter" />
-        <path name="compress-offload-playback9 speaker" />
-    </path>
-
-    <path name="compress-offload-playback9 speaker-safe-and-headphones">
         <path name="compress-offload-playback9 headphones" />
         <path name="compress-offload-playback9" />
     </path>
@@ -2095,6 +1609,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="audio-record bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="audio-record bt-sco" />
     </path>
 
@@ -2111,6 +1626,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="audio-record-compress bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="audio-record-compress bt-sco" />
     </path>
 
@@ -2127,6 +1643,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="low-latency-record bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="low-latency-record bt-sco" />
     </path>
 
@@ -2155,7 +1672,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="incall-rec-uplink">
-        <ctl name="MultiMedia9 Mixer VOC_REC_UL" value="1" />
+        <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
     </path>
 
     <path name="incall-rec-uplink bt-sco">
@@ -2194,12 +1711,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="incall-rec-uplink-compress" />
     </path>
 
-    <path name="incall-rec-uplink call-proxy-in">
-        <path name="incall-rec-uplink" />
-    </path>
-
     <path name="incall-rec-downlink">
-        <ctl name="MultiMedia9 Mixer VOC_REC_DL"  value="1" />
+        <ctl name="MultiMedia1 Mixer VOC_REC_DL"  value="1" />
     </path>
 
     <path name="incall-rec-downlink bt-sco">
@@ -2236,10 +1749,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="incall-rec-downlink-compress afe-proxy">
         <path name="incall-rec-downlink-compress" />
-    </path>
-
-    <path name="incall-rec-downlink call-proxy-in">
-        <path name="incall-rec-downlink" />
     </path>
 
     <path name="incall-rec-uplink-and-downlink">
@@ -2282,10 +1791,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="incall-rec-uplink-and-downlink-compress afe-proxy">
         <path name="incall-rec-uplink-and-downlink-compress" />
-    </path>
-
-    <path name="incall-rec-uplink-and-downlink call-proxy-in">
-        <path name="incall-rec-uplink-and-downlink" />
     </path>
 
     <path name="hfp-sco">
@@ -2336,6 +1841,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="compress-voip-call bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="compress-voip-call bt-sco" />
     </path>
 
@@ -2397,6 +1903,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="voicemmode1-call bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="voicemmode1-call bt-sco" />
     </path>
 
@@ -2423,11 +1930,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <path name="voicemmode1-call voice-speaker-2-vbat">
         <path name="echo-reference speaker-vbat-mono-2" />
         <path name="voicemmode1-call"/>
-    </path>
-
-    <path name="voicemmode1-call call-proxy">
-        <ctl name="PROXY_RX_Voice Mixer VoiceMMode1" value="1" />
-        <ctl name="VoiceMMode1_Tx Mixer PROXY_TX_MMode1" value="1" />
     </path>
 
     <path name="voicemmode2-call">
@@ -2463,6 +1965,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="voicemmode2-call bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="voicemmode2-call bt-sco" />
     </path>
 
@@ -2491,71 +1994,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="voicemmode2-call"/>
     </path>
 
-    <path name="voicemmode2-call call-proxy">
-        <ctl name="PROXY_RX_Voice Mixer VoiceMMode2" value="1" />
-        <ctl name="VoiceMMode2_Tx Mixer PROXY_TX_MMode2" value="1" />
-    </path>
-
    <path name="spkr-rx-calib">
         <ctl name="INT4_MI2S_RX_DL_HL Switch"  value="1" />
     </path>
 
     <path name="spkr-vi-record">
-    </path>
-
-    <!-- VoIP Rx settings -->
-    <path name="audio-playback-voip">
-        <ctl name="INT4_MI2S_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip headphones">
-        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip bt-sco">
-        <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip bt-sco-wb">
-        <path name="audio-playback-voip bt-sco" />
-    </path>
-
-    <path name="audio-playback-voip usb-headphones">
-        <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip usb-headset">
-        <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip afe-proxy">
-        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip display-port">
-        <ctl name="DISPLAY_PORT Mixer MultiMedia10" value="1" />
-    </path>
-
-    <path name="audio-playback-voip speaker-and-display-port">
-        <path name="audio-playback-voip display-port" />
-        <path name="audio-playback-voip" />
-    </path>
-
-    <!-- VoIP Tx settings -->
-    <path name="audio-record-voip">
-        <ctl name="MultiMedia10 Mixer INT3_MI2S_TX" value="1" />
-    </path>
-
-    <path name="audio-record-voip bt-sco">
-        <ctl name="MultiMedia10 Mixer SLIM_7_TX" value="1" />
-    </path>
-
-    <path name="audio-record-voip bt-sco-wb">
-        <path name="audio-record-voip bt-sco" />
-    </path>
-
-    <path name="audio-record-voip usb-headset-mic">
-        <ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="1" />
     </path>
 
     <!-- These are actual sound device specific mixer settings -->
@@ -2648,10 +2091,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="speaker-liquid">
         <path name="speaker" />
-    </path>
-
-    <path name="speaker-safe">
-        <path name="speaker-mono" />
     </path>
 
    <path name="speaker-vbat-mono">
@@ -2806,14 +2245,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="headphones" />
     </path>
 
-    <path name="hph-lowpower-mode">
-        <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
-    </path>
-
-    <path name="headphones-hifi-filter">
-        <path name="headphones" />
-    </path>    
-
     <path name="true-native-mode">
     </path>
 
@@ -2831,10 +2262,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="voice-handset">
-        <path name="handset" />
-    </path>
-
-    <path name="voice-hac-handset">
         <path name="handset" />
     </path>
 
@@ -2878,31 +2305,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="headset-mic" />
     </path>
 
-    <path name="voice-headset">
-        <path name="headphones" />
-    </path>
-
     <path name="speaker-and-headphones">
         <path name="headphones" />
         <path name="speaker" />
     </path>
 
-    <path name="speaker-safe-and-headphones">
-        <path name="headphones" />
-        <path name="speaker-safe" />
-    </path>
-
-    <path name="speaker-and-headphones-hifi-filter">
-        <path name="headphones-hifi-filter" />
-        <path name="speaker" />
-    </path>    
-
     <path name="speaker-and-line">
         <path name="speaker-and-headphones" />
-    </path>
-
-    <path name="speaker-safe-and-line">
-        <path name="speaker-safe-and-headphones" />
     </path>
 
     <path name="speaker-and-headphones-liquid">
@@ -2912,28 +2321,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="speaker-and-line-liquid">
         <path name="speaker-and-headphones-liquid" />
-    </path>
-
-    <path name="spkr-gain-in-headphone-combo">
-        <ctl name="Left Speaker Gain" value="24" />
-        <ctl name="Right Speaker Gain" value="24" />
-    </path>
-
-    <path name="speaker-gain-default">
-        <ctl name="Left Speaker Gain" value="24" />
-        <ctl name="Right Speaker Gain" value="24" />
-    </path>
-
-    <path name="spkr-gain-in-line-combo">
-        <path name="spkr-gain-in-headphone-combo" />
-    </path>
-
-    <path name="spkr-safe-gain-in-line-combo">
-        <path name="speaker-and-headphones" />
-    </path>
-
-    <path name="spkr-safe-gain-in-headphone-combo">
-        <path name="speaker-and-headphones" />
     </path>
 
     <path name="usb-headphones">
@@ -2983,11 +2370,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <path name="speaker-and-usb-headphones">
         <path name="speaker" />
-        <path name="usb-headphones" />
-    </path>
-
-    <path name="speaker-safe-and-usb-headphones">
-        <path name="speaker-safe" />
         <path name="usb-headphones" />
     </path>
 
@@ -3239,16 +2621,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="bt-a2dp">
+        <ctl name="BT SampleRate" value="KHZ_48" />
+        <ctl name="AFE Input Channels" value="Two" />
         <ctl name="SLIM7_RX ADM Channels" value="Two" />
     </path>
 
     <path name="speaker-and-bt-a2dp">
         <path name="speaker" />
-        <path name="bt-a2dp" />
-    </path>
-
-    <path name="speaker-safe-and-bt-a2dp">
-        <path name="speaker-safe" />
         <path name="bt-a2dp" />
     </path>
 
@@ -3305,17 +2684,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="deep-buffer-playback" />
     </path>
 
-    <path name="deep-buffer-playback speaker-safe-and-bt-a2dp">
-        <path name="deep-buffer-playback bt-a2dp" />
-        <path name="deep-buffer-playback" />
-    </path>
-
     <path name="compress-offload-playback speaker-and-bt-a2dp">
-        <path name="compress-offload-playback bt-a2dp" />
-        <path name="compress-offload-playback" />
-    </path>
-
-    <path name="compress-offload-playback speaker-safe-and-bt-a2dp">
         <path name="compress-offload-playback bt-a2dp" />
         <path name="compress-offload-playback" />
     </path>
@@ -3325,17 +2694,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="low-latency-playback" />
     </path>
 
-    <path name="low-latency-playback speaker-safe-and-bt-a2dp">
-        <path name="low-latency-playback bt-a2dp" />
-        <path name="low-latency-playback" />
-    </path>
-
     <path name="compress-offload-playback2 speaker-and-bt-a2dp">
-        <path name="compress-offload-playback2 bt-a2dp" />
-        <path name="compress-offload-playback2" />
-    </path>
-
-    <path name="compress-offload-playback2 speaker-safe-and-bt-a2dp">
         <path name="compress-offload-playback2 bt-a2dp" />
         <path name="compress-offload-playback2" />
     </path>
@@ -3345,17 +2704,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback3" />
     </path>
 
-    <path name="compress-offload-playback3 speaker-safe-and-bt-a2dp">
-        <path name="compress-offload-playback3 bt-a2dp" />
-        <path name="compress-offload-playback3" />
-    </path>
-
     <path name="compress-offload-playback4 speaker-and-bt-a2dp">
-        <path name="compress-offload-playback4 bt-a2dp" />
-        <path name="compress-offload-playback4" />
-    </path>
-
-    <path name="compress-offload-playback4 speaker-safe-and-bt-a2dp">
         <path name="compress-offload-playback4 bt-a2dp" />
         <path name="compress-offload-playback4" />
     </path>
@@ -3365,17 +2714,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback5" />
     </path>
 
-    <path name="compress-offload-playback5 speaker-safe-and-bt-a2dp">
-        <path name="compress-offload-playback5 bt-a2dp" />
-        <path name="compress-offload-playback5" />
-    </path>
-
     <path name="compress-offload-playback6 speaker-and-bt-a2dp">
-        <path name="compress-offload-playback6 bt-a2dp" />
-        <path name="compress-offload-playback6" />
-    </path>
-
-    <path name="compress-offload-playback6 speaker-safe-and-bt-a2dp">
         <path name="compress-offload-playback6 bt-a2dp" />
         <path name="compress-offload-playback6" />
     </path>
@@ -3385,17 +2724,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback7" />
     </path>
 
-    <path name="compress-offload-playback7 speaker-safe-and-bt-a2dp">
-        <path name="compress-offload-playback7 bt-a2dp" />
-        <path name="compress-offload-playback7" />
-    </path>
-
     <path name="compress-offload-playback8 speaker-and-bt-a2dp">
-        <path name="compress-offload-playback8 bt-a2dp" />
-        <path name="compress-offload-playback8" />
-    </path>
-
-    <path name="compress-offload-playback8 speaker-safe-and-bt-a2dp">
         <path name="compress-offload-playback8 bt-a2dp" />
         <path name="compress-offload-playback8" />
     </path>
@@ -3405,17 +2734,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="compress-offload-playback9" />
     </path>
 
-    <path name="compress-offload-playback9 speaker-safe-and-bt-a2dp">
-        <path name="compress-offload-playback9 bt-a2dp" />
-        <path name="compress-offload-playback9" />
-    </path>
-
     <path name="audio-ull-playback speaker-and-bt-a2dp">
-        <path name="audio-ull-playback bt-a2dp" />
-        <path name="audio-ull-playback" />
-    </path>
-
-    <path name="audio-ull-playback speaker-safe-and-bt-a2dp">
         <path name="audio-ull-playback bt-a2dp" />
         <path name="audio-ull-playback" />
     </path>
@@ -3433,16 +2752,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <path name="mmap-playback headphones" />
     </path>
 
-    <path name="mmap-playback speaker-safe-and-headphones">
-        <path name="mmap-playback" />
-        <path name="mmap-playback headphones" />
-    </path>
-
     <path name="mmap-playback bt-sco">
         <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
     <path name="mmap-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="mmap-playback bt-sco" />
     </path>
 
@@ -3467,7 +2782,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </path>
 
     <path name="mmap-record bt-sco-wb">
-        <ctl name="AUX PCM SampleRate" value="16000" />
+        <ctl name="AUX PCM SampleRate" value="KHZ_16" />
         <path name="mmap-record bt-sco" />
     </path>
 
