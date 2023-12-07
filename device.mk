@@ -7,12 +7,6 @@
 # Inherit from sdm660-common
 $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
-
-# Project ID Quota
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # APEX
 ENABLE_APEX := true
 
@@ -76,10 +70,6 @@ PRODUCT_SHIPPING_API_LEVEL := 28
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti
 
 # Wifi
 PRODUCT_PACKAGES += \
