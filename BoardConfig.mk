@@ -26,6 +26,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Kernel
 TARGET_KERNEL_CONFIG := platina_defconfig
 
