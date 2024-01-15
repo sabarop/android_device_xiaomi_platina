@@ -19,9 +19,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/twrp_clover.mk
+     $(LOCAL_DIR)/twrp_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_clover-user \
-    twrp_clover-userdebug \
-    twrp_clover-eng
+    twrp_platina-user \
+    twrp_platina-userdebug \
+    twrp_platina-eng
