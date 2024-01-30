@@ -76,6 +76,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libstdc++_vendor
+
 # Wifi
 PRODUCT_PACKAGES += \
     PlatinaWifiOverlay
