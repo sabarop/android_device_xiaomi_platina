@@ -592,7 +592,6 @@ vendor/lib/libois_bu63165.so
 vendor/lib/libois_lc898122.so
 
 # Fingerprint sensor
--app/FingerprintExtensionService/FingerprintExtensionService.apk
 vendor/etc/permissions/com.fingerprints.extension.xml
 framework/com.fingerprints.extension.jar
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
