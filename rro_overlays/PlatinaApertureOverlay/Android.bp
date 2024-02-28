@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "PlatinaApertureOverlay",
+    theme: "PlatinaApertureOverlay",
+    product_specific: true,
+}
