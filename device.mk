@@ -77,10 +77,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
-
 # VNDK
 PRODUCT_PACKAGES += \
     libstdc++_vendor
