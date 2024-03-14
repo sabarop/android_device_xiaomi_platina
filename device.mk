@@ -74,7 +74,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.basic
 
 # VNDK
 PRODUCT_PACKAGES += \
