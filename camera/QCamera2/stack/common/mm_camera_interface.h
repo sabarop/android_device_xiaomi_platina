@@ -77,7 +77,6 @@ typedef enum {
  *  dump the image to the file
  **/
 #define CAM_DUMP_TO_FILE(path, name, index, extn, p_addr, len) ({ \
-  size_t rc = 0; \
   char filename[FILENAME_MAX]; \
   if (index >= 0) \
     snprintf(filename, FILENAME_MAX, "%s/%s%d.%s", path, name, index, extn); \
@@ -85,7 +84,7 @@ typedef enum {
     snprintf(filename, FILENAME_MAX, "%s/%s.%s", path, name, extn); \
   FILE *fp = fopen(filename, "w+"); \
   if (fp) { \
-    rc = fwrite(p_addr, 1, len, fp); \
+    fwrite(p_addr, 1, len, fp); \
     LOGE("written size %d", len); \
     fclose(fp); \
   } else { \

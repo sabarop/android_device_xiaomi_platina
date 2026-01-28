@@ -1244,7 +1244,9 @@ int32_t QCamera3GrallocMemory::getBufferIndex(uint32_t frameNumber)
 int QCamera3GrallocMemory::cacheOps(uint32_t index, unsigned int cmd)
 {
     int rc = 0;
+#ifndef TARGET_ION_ABI_VERSION
     bool needToInvalidate = false;
+#endif //TARGET_ION_ABI_VERSION
     struct private_handle_t *privateHandle = NULL;
 
     if (index >= MM_CAMERA_MAX_NUM_FRAMES) {
@@ -1261,7 +1263,9 @@ int QCamera3GrallocMemory::cacheOps(uint32_t index, unsigned int cmd)
     if (privateHandle != NULL){
         if(privateHandle->flags &
              (private_handle_t::PRIV_FLAGS_NON_CPU_WRITER)){
+#ifndef TARGET_ION_ABI_VERSION
                needToInvalidate = true;
+#endif //TARGET_ION_ABI_VERSION
         }
     }
 #ifndef TARGET_ION_ABI_VERSION

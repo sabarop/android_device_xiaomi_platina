@@ -3020,48 +3020,47 @@ void QCamera2HardwareInterface::dumpMetadataToFile(QCameraStream *stream,
             filePath.append(buf);
             int file_fd = open(filePath.c_str(), O_RDWR | O_CREAT, 0777);
             if (file_fd >= 0) {
-                ssize_t written_len = 0;
                 tuning_ptr->tuning_data_version = TUNING_DATA_VERSION;
                 void *data = (void *)((uint8_t *)&tuning_ptr->tuning_data_version);
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 data = (void *)((uint8_t *)&tuning_ptr->tuning_sensor_data_size);
                 LOGH("tuning_sensor_data_size %d",(int)(*(int *)data));
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 data = (void *)((uint8_t *)&tuning_ptr->tuning_vfe_data_size);
                 LOGH("tuning_vfe_data_size %d",(int)(*(int *)data));
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 data = (void *)((uint8_t *)&tuning_ptr->tuning_cpp_data_size);
                 LOGH("tuning_cpp_data_size %d",(int)(*(int *)data));
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 data = (void *)((uint8_t *)&tuning_ptr->tuning_cac_data_size);
                 LOGH("tuning_cac_data_size %d",(int)(*(int *)data));
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 data = (void *)((uint8_t *)&tuning_ptr->tuning_cac_data_size2);
                 LOGH("< skrajago >tuning_cac_data_size %d",(int)(*(int *)data));
-                written_len += write(file_fd, data, sizeof(uint32_t));
+                write(file_fd, data, sizeof(uint32_t));
                 size_t total_size = tuning_ptr->tuning_sensor_data_size;
                 data = (void *)((uint8_t *)&tuning_ptr->data);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 total_size = tuning_ptr->tuning_vfe_data_size;
                 data = (void *)((uint8_t *)&tuning_ptr->data[TUNING_VFE_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 total_size = tuning_ptr->tuning_cpp_data_size;
                 data = (void *)((uint8_t *)&tuning_ptr->data[TUNING_CPP_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 total_size = tuning_ptr->tuning_cac_data_size;
                 data = (void *)((uint8_t *)&tuning_ptr->data[TUNING_CAC_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
 
                 total_size = tuning_ptr->tuning_mod1_stats_data_size;
                 data =
                 (void *)((uint8_t *)&tuning_ptr->data[TUNING_MOD1_AEC_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 data =
                 (void *)((uint8_t *)&tuning_ptr->data[TUNING_MOD1_AWB_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 data =
                 (void *)((uint8_t *)&tuning_ptr->data[TUNING_MOD1_AF_DATA_OFFSET]);
-                written_len += write(file_fd, data, total_size);
+                write(file_fd, data, total_size);
                 close(file_fd);
             }else {
                 LOGE("fail t open file for image dumping");

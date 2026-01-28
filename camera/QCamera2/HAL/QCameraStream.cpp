@@ -1347,14 +1347,13 @@ int32_t QCameraStream::bufDone(const void *opaque, bool isMetaData, QCameraVideo
 {
     int32_t rc = NO_ERROR;
     int index = -1;
-    bool needPerfEvet = FALSE;
     QCameraGrallocMemory *memory = NULL;
     memory = (QCameraGrallocMemory *)mStreamBufs;
 
     //Close and delete duplicated native handle and FD's.
     if (videoMem != NULL) {
         index = videoMem->getMatchBufIndex(opaque, isMetaData);
-        needPerfEvet = videoMem->needPerfEvent(opaque, isMetaData);
+        videoMem->needPerfEvent(opaque, isMetaData);
         rc = videoMem->closeNativeHandle(opaque, isMetaData);
         if (rc != NO_ERROR) {
             LOGE("Invalid video metadata");

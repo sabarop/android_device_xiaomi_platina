@@ -984,7 +984,6 @@ mm_camera_buf_def_t *QCameraPostProcessor::getOfflinePPInputBuffer(
     QCameraChannel *pChannel = NULL;
     QCameraStream *src_pStream = NULL;
     mm_camera_buf_def_t *data_frame = NULL;
-    mm_camera_buf_def_t *meta_frame = NULL;
 
     if (mOfflineDataBufs == NULL) {
         LOGE("Offline Buffer not allocated");
@@ -1010,7 +1009,6 @@ mm_camera_buf_def_t *QCameraPostProcessor::getOfflinePPInputBuffer(
                 data_frame = src_frame->bufs[i];
             } else if (src_pStream->getMyType() == CAM_STREAM_TYPE_METADATA){
                 LOGH("Found Metada input stream");
-                meta_frame = src_frame->bufs[i];
             }
         }
     }
@@ -1452,7 +1450,9 @@ int32_t QCameraPostProcessor::processPPData(mm_camera_super_buf_t *frame)
     }
 
     // find snapshot frame frame
+#ifdef TARGET_TS_MAKEUP
     mm_camera_buf_def_t *pReprocFrame = NULL;
+#endif
     QCameraStream * pSnapshotStream = NULL;
     QCameraChannel *pChannel = m_parent->getChannelByHandle(frame->ch_id);
     if (pChannel == NULL) {
@@ -1474,7 +1474,9 @@ int32_t QCameraPostProcessor::processPPData(mm_camera_super_buf_t *frame)
         pSnapshotStream = pChannel->getStreamByHandle(frame->bufs[i]->stream_id);
         if (pSnapshotStream != NULL) {
             if (pSnapshotStream->isOrignalTypeOf(CAM_STREAM_TYPE_SNAPSHOT)) {
+#ifdef TARGET_TS_MAKEUP
                 pReprocFrame = frame->bufs[i];
+#endif
                 break;
             }
         }

@@ -2563,7 +2563,6 @@ void* QCameraMuxer::composeMpoRoutine(__unused void *data)
                     LOGH("Mpo Composition Requested");
                     cam_compose_jpeg_info_t *main_jpeg_node = NULL;
                     cam_compose_jpeg_info_t *aux_jpeg_node = NULL;
-                    bool foundMatch = false;
                     while (!gMuxer->m_MainJpegQ.isEmpty() &&
                             !gMuxer->m_AuxJpegQ.isEmpty()) {
                         main_jpeg_node = (cam_compose_jpeg_info_t *)
@@ -2586,7 +2585,6 @@ void* QCameraMuxer::composeMpoRoutine(__unused void *data)
                                         aux_jpeg_node,
                                         aux_jpeg_node->buffer->data,
                                         aux_jpeg_node->buffer->size);
-                                foundMatch = true;
                                 // start MPO composition
                                 gMuxer->composeMpo(main_jpeg_node,
                                         aux_jpeg_node);

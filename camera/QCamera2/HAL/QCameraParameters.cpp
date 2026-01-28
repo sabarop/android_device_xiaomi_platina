@@ -4193,7 +4193,6 @@ int32_t QCameraParameters::setQuadraCfa(const QCameraParameters& params)
     int32_t width = 0,height = 0;
     bool prev_quadracfa = getQuadraCfa();
     int32_t rc = NO_ERROR;
-    int32_t value;
 
     if (!m_pCapability->is_remosaic_lib_present) {
         LOGD("Quadra CFA mode not supported");
@@ -4212,7 +4211,6 @@ int32_t QCameraParameters::setQuadraCfa(const QCameraParameters& params)
         LOGI("Quadra CFA mode not selected");
         m_bQuadraCfa = FALSE;
     }
-    value = m_bQuadraCfa;
     if (prev_quadracfa == m_bQuadraCfa) {
         LOGD("No change in Quadra CFA mode");
     } else {
@@ -4275,7 +4273,7 @@ int32_t QCameraParameters::setQuadraCfa(const QCameraParameters& params)
         m_bRawZSL = rawZSL;
         LOGH("m_bRawZSL %d", m_bRawZSL);
     }
-    return NO_ERROR;
+    return rc;
 
 }
 
@@ -4318,7 +4316,7 @@ int32_t QCameraParameters::setQuadraCfa(const QCameraParameters& params)
         m_bRawZSLCapture = rawZslCapture;
         LOGH("m_bRawZSLCapture %d", m_bRawZSLCapture);
     }
-    return NO_ERROR;
+    return rc;
 }
 
 /*===========================================================================
