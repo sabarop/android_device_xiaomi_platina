@@ -1,3 +1,6 @@
+# eBPF
+ro.bpf.kver_override=5.4.186
+
 # Blur
 persist.sysui.disableBlur=1
 ro.launcher.blur.appLaunch=0
